@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>JustImajin Entertainment | Premium Anime Streaming</title>
+ <link rel="stylesheet" href="style.css">
+ <meta name="description" content="Stream the best anime series and movies. From classics to latest releases, discover your next favorite show.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link
+ href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+ rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body data-theme="dark">
+ <header data-aos="fade-down" data-aos-duration="2000">
+ <h1><span style="color: orange;">Just</span>Imajin</h1>
+ <nav>
+ <a href="index.html">Home</a>
+ <a href="movie.html">Movies</a>
+ <a href="series.html">Series</a>
+ <a href="special.html">Specials</a>
+ </nav>
+
+ <div class="search-container">
+ <input type="text" placeholder="Search your imajination..." class="search-input">
+ <button class="search-btn">
+ <i class="left-menu-icon fas fa-search"></i>
+ </button>
+ </div>
+ <div class="header-actions">
+ <button class="user-icon" arial-label="user menu"><i class="fas fa-user"></i></button>
+ <!-- User Auth Modal -->
+<div class="auth-modal" id="authModal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        
+        <!-- Login/Signup Tabs -->
+        <div class="auth-tabs">
+            <button class="tab-btn active" data-tab="login">Login</button>
+            <button class="tab-btn" data-tab="signup">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <form class="auth-form active" id="loginForm">
+            <h3>Welcome Back</h3>
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required placeholder="Enter your password">
+            </div>
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <span>Remember me</span>
+                </label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Login</button>
+            <div class="auth-divider">
+                <span>or continue with</span>
+            </div>
+            <div class="social-auth">
+                <button type="button" class="btn btn-social btn-google">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button type="button" class="btn btn-social btn-github">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+        </form>
+
+        <!-- Signup Form -->
+        <form class="auth-form" id="signupForm">
+            <h3>Create Account</h3>
+            <div class="form-group">
+                <label for="signupUsername">Username</label>
+                <input type="text" id="signupUsername" required placeholder="Choose a username">
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email</label>
+                <input type="email" id="signupEmail" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <input type="password" id="signupPassword" required placeholder="Create a password">
+                <div class="password-strength">
+                    <div class="strength-bar"></div>
+                    <span class="strength-text">Password strength</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" required placeholder="Confirm your password">
+            </div>
+            <div class="form-options">
+                <label class="terms-agree">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+
+        <!-- User Profile (shown when logged in) -->
+        <div class="user-profile" id="userProfile">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h4 id="profileUsername">Username</h4>
+                    <span id="profileEmail">user@example.com</span>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <a href="#" class="menu-item">
+                    <i class="fas fa-user"></i> My Profile
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-bookmark"></i> Watchlist
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-history"></i> Watch History
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+                <button class="menu-item btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="toggle" id="themeToggle">
+    <i class="fas fa-sun toggle-icon"></i>
+    <i class="fas fa-moon toggle-icon"></i>
+    <div class="toggle-ball"></div>
+</div>
+
+ </div>
+ </header>
+
+ <!-- carousel -->
+ <div class="carousel">
+ <!-- list item -->
+ <div class="list">
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/feature.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>One Piece</h1>
+ <div class="details">
+ <span class="detail">1999-Present</span>
+ <span class="detail">16+</span>
+ <span class="detail">20+ Seasons</span>
+ <span class="detail">Shounen</span>
+ <span class="detail">⭐ 10/10</span>
+ </div>
+ <h4>A legendary tale of pirates seeking the ultimate treasure. With wild adventures, heartfelt
+ bonds, and grand battles, it sails across the seas of dreams and danger nonstop.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('one-piece')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn">
+  <i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/naruto.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Naruto/Naruto Shipuden</h1>
+ <div class="details">
+ <span class="detail">2002-2007</span>
+ <span class="detail">16+</span>
+ <span class="detail">26 Seasons</span>
+ <span class="detail">Shounen</span>
+ <span class="detail">⭐ 9.9/10</span>
+ </div>
+ <h4>A boy born with a beast fights for recognition and peace. Through pain and friendship, he rises
+ to become the hope of a world torn by war and hate.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('naruto')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/bleach.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Bleach</h1>
+ <div class="details">
+ <span class="detail">2004-2025</span>
+ <span class="detail">16+</span>
+ <span class="detail">20+ Seasons</span>
+ <span class="detail">Shounen</span>
+ <span class="detail">⭐ 9.6/10</span>
+ </div>
+ <h4>A teen becomes a Soul Reaper and battles ghosts and gods. In a world between life and death,
+ loyalty, fate, and power clash with explosive intensity.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('bleach')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/dragon.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Dragon ball Franchise</h1>
+ <div class="details">
+ <span class="detail">1996-Present</span>
+ <span class="detail">16+</span>
+ <span class="detail">20+ Seasons</span>
+ <span class="detail">Shounen</span>
+ <span class="detail">⭐ 9.7/10</span>
+ </div>
+ <h4>Martial arts, aliens, and gods collide as Goku seeks strength. Earth’s mightiest heroes defend
+ the universe in epic duels that defy logic and gravity.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('dragon-ball')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/demon.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Kimetsu No Yaiba</h1>
+ <div class="details">
+ <span class="detail">2019-Present</span>
+ <span class="detail">16+</span>
+ <span class="detail">4 Seasons</span>
+ <span class="detail">ACction/Fantasy</span>
+ <span class="detail">⭐ 9.6/10</span>
+ </div>
+ <h4>A brother fights demons to save his sister’s soul. In a world of swords and blood, he rises
+ through despair, flames, and moonlit battles against evil.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('demon-slayer')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/jjk.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Jujutsu Kaisen (TV)</h1>
+ <div class="details">
+ <span class="detail">2020-Present</span>
+ <span class="detail">16+</span>
+ <span class="detail">2 Seasons</span>
+ <span class="detail">Action</span>
+ <span class="detail">⭐ 9.6/10</span>
+ </div>
+ <h4>Cursed spirits lurk in shadows as students master deadly arts. With chaos and courage, they
+ fight to break the cycle of fear, fate, and corruption.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('jujutsu-kaisen')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/aot.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Attack On Titan</h1>
+ <div class="details">
+ <span class="detail">2013-2023</span>
+ <span class="detail">16+</span>
+ <span class="detail">4 Seasons</span>
+ <span class="detail">Action</span>
+ <span class="detail">⭐ 9.9/10</span>
+ </div>
+ <h4>Walls fall, secrets rise. In a broken world overrun by giants, humanity’s last soldiers uncover
+ horrifying truths while waging a desperate final stand.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('attack-on-titan')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/hxh.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Hunter X Hunter</h1>
+ <div class="details">
+ <span class="detail">2011-2014</span>
+ <span class="detail">16+</span>
+ <span class="detail">6 Seasons</span>
+ <span class="detail">Shounen</span>
+ <span class="detail">⭐ 9.4/10</span>
+ </div>
+ <h4>A boy hunts for his father and faces twisted trials. In a world where danger smiles and morals
+ blur, his journey becomes one of growth and grit.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('hunter-x-hunter')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+ <div class="item">
+ <video autoplay muted loop playsinline class="featured-video">
+ <source src="img/black.mp4" type="video/mp4">
+ Your browser does not support the video tag.
+ </video>
+ <div class="content">
+ <h1>Black Clover</h1>
+ <div class="details">
+ <span class="detail">2017-2021</span>
+ <span class="detail">16+</span>
+ <span class="detail">4 Seasons</span>
+ <span class="detail">Action/Fantasy</span>
+ <span class="detail">⭐ 9.0/10</span>
+ </div>
+ <h4>Asta dreams of magic with no magic at all. Rivals, wizards, and war await as he climbs with
+ sheer willpower toward a destiny forged in flame and steel.</h4>
+
+ <div class="buttons">
+<button class="download-btn" onclick="watchAnime('black-clover')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ <button class="trailer-btn"><i class="fas fa-bookmark"></i></button>
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- list thumnail -->
+ <div class="thumbnail">
+ <div class="item">
+ <img src="img/One Piece.jpg">
+ </div>
+ <div class="item">
+ <img src="img/naruto.jpg">
+ </div>
+ <div class="item">
+ <img src="img/bleach.jpg">
+ </div>
+ <div class="item">
+ <img src="img/Dragon ball.jpg">
+ </div>
+ <div class="item">
+ <img src="img/kimetsu.jpg">
+ </div>
+ <div class="item">
+ <img src="img/jjk.jpg">
+ </div>
+ <div class="item">
+ <img src="img/aot.jpg">
+ </div>
+ <div class="item">
+ <img src="img/hxh.jpg">
+ </div>
+ <div class="item">
+ <img src="img/blackclover.jpg">
+ </div>
+ </div>
+ <!-- next prev -->
+ <div class="arrows">
+ <button id="prev"><</button>
+ <button id="next">></button>
+ </div>
+
+ <!-- time running -->
+ <div class="time"></div>
+ </div>
+
+<section class="content-section">
+  <h2 class="section-title">TOP PICKS FOR YOU</h2>
+  <!-- Carousel track -->
+  <div class="carousel-track">
+      
+<i class="fas fa-chevron-left arrow left-arrow"></i>
+    <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/Solo.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Solo Leveling</span>
+          <p class="movie-description">
+            Once the world’s weakest hunter, Sung Jin-Woo is reborn through
+ blood, death, and mystery into something more—something terrifying. In a world where gates
+ unleash monsters, he doesn’t just survive them… he levels up. Each dungeon is a gamble—but with
+ each kill, he inches closer to a power no one can stop.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.6/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+<button class="btn btn-primary" onclick="watchAnime('solo-leveling')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/kaiju.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Kaiju No. 8</span>
+          <p class="movie-description">
+            Kafka Hibino cleans up kaiju corpses—until one fuses with him. Now half-human, half-monster,
+ he’s humanity’s last hope… and biggest threat. Packed with explosive fights, military squads,
+ and emotional stakes, Kaiju No. 8 is a beast of modern shonen greatness.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 8.8/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('kaiju-no8')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/mha.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">My Hero Academia</span>
+          <p class="movie-description">
+            In a world where powers—Quirks—are the norm, Izuku Midoriya is born
+ powerless. But when fate grants him the greatest Quirk of all, he must rise from zero to symbol.
+ With heroism, heartbreak, and epic battles, MHA asks: What does it mean to truly be a hero?
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 8.6/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Heroism</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('my-hero-academia')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/ff.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Fire Force</span>
+          <p class="movie-description">
+            Spontaneous human combustion turns people into flaming demons—and
+ only the Fire Force can stop them. Shinra Kusakabe, with his devil’s grin and foot-fired fury,
+ races into the inferno. Stylish, fast, and infernally cool—this is firefighting at its most
+ supernatural.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.2/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Shounen</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('fire-force')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/ddd.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Dan Da Dan</span>
+          <p class="movie-description">
+            Psychics, aliens, curses, and one absurdly chaotic love story
+ collide in Dandadan. When a nerd and a spiritual girl go ghost-hunting, they unleash a barrage
+ of bizarre threats. Expect the unexpected—because this supernatural comedy doesn’t hold back.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.0/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('dan-da-dan')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/gach.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Gachiakuta</span>
+          <p class="movie-description">
+           Thrown into a pit of filth for a crime he didn't commit, Rudo finds power in the trash. He awakens an ability to weaponize hatred through discarded objects, and in this junkyard hell, he will use his rage to climb back up and take revenge on the world that discarded him.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.0/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('gachiakuta')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/wind.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Wind Breaker</span>
+          <p class="movie-description">
+            Haruka Sakura believes strength is everything. He enrolls at Furin High, a school of brawlers, to prove he's the strongest. But he discovers these delinquents are the town's protectors, and he must learn that true power isn't standing alone, but fighting for others.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.0/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('wind-breaker')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+    </div>
+            <i class="fas fa-chevron-right arrow"></i>
+  </div>
+  <!-- Right arrow -->
+</section>
+
+<section class="content-section">
+  <div class="movie-list-container">
+    <h1 class="section-title">THE CLASSICS</h1>
+    <div class="movie-grid">
+<i class="fas fa-chevron-left arrow left-arrow"></i>
+      <!-- Pokémon -->
+       <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/pokemon.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Pokemon</span>
+          <p class="movie-description">
+            A ten-year-old leaves home with a dream and a Pikachu—and the world changes forever. 
+            From iconic Gym Battles to friendships forged in fire, Pokémon is more than nostalgia—
+            it's a saga of growth, teamwork, and chasing greatness across ever-expanding horizons.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 8.5/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+                    <button class="btn btn-primary" onclick="watchAnime('pokemon')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+       </div>
+
+      <!-- Cowboy Bebop -->
+       <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/cow.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Cowboy Bebop</span>
+          <p class="movie-description">
+            Bounty hunters. Broken pasts. A saxophone playing in the void of space. Cowboy Bebop is 
+            a genre-defying masterpiece where every episode is a mood, every character is haunted, 
+            and the future feels heartbreakingly human. See you, space cowboy.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 8.8/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('cowboy-bebop')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+       </div>
+
+      <!-- Beyblade Burst -->
+       <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/bey.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Beyblade Burst</span>
+          <p class="movie-description">
+            Spinning tops become avatars of passion, spirit, and pure explosive energy! With legendary 
+            clashes and high-octane tournaments, the Bladers of this generation battle not just for 
+            victory—but to etch their names into the storm of legends. Let it rip!
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.9/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('beyblade-burst')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+       </div>
+
+      <!-- Rurouni Kenshin -->
+       <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/ruro.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Rurouni Kenshin</span>
+          <p class="movie-description">
+            He was once the most feared assassin of the Meiji era—the Battōsai. Now, Kenshin Himura 
+            roams Japan with a vow to never kill again. But ghosts from his bloody past won’t rest easy… 
+            A samurai tale of redemption, love, and blade-to-blade showdowns with a heart as sharp as its steel.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.9/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('rurouni-kenshin')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+       </div>
+
+      <!-- Yu Yu Hakusho -->
+       <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/yuy.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Yu Yu Hakusho</span>
+          <p class="movie-description">
+            A delinquent dies saving a kid—and earns a second shot at life… as a Spirit Detective. With 
+            demons, tournaments, and a rough-edged heart, this classic balances dark stakes and iconic 
+            friendships in pure 90s shonen glory.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.9/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('yu-yu-hakusho')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+       </div>
+
+      <!-- Saint Seiya -->
+       <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/saint.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Saint Seiya - Knights of the Zodiac</span>
+          <p class="movie-description">
+            When gods rise, warriors rise higher. Clad in shining armor of constellations, the Saints defend 
+            Athena against mythic threats that could shatter the cosmos. An eternal battle of destiny, 
+            cosmos, and sacrifice, where every punch breaks limits—and stars.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.9/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('saint-seya')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+       </div>
+
+      <!-- Ninja Scroll -->
+       <div class="card">
+      <article class="movie-card">
+        <img class="movie-poster" src="img/ninja.jpg" alt="">
+        <div class="movie-info">
+          <span class="movie-title">Ninja Scroll</span>
+          <p class="movie-description">
+            Blood, blades, and betrayal. Ninja Scroll is a feudal fever dream where demonic assassins, 
+            dark sorcery, and lone warriors collide in a deadly dance. Gritty, raw, and legendary—this 
+            is one of the anime that shaped the path of all that followed.
+          </p>
+          <div class="movie-meta">
+            <span class="movie-rating">⭐ 9.9/10</span>
+            <span class="movie-genre">Sub|Dub</span>
+            <span class="movie-genre">Action | Fantasy</span>
+          </div>
+          <button class="btn btn-primary" onclick="watchAnime('ninja-scroll')">
+    <i class="fas fa-play"></i> Watch
+</button>
+        </div>
+      </article>
+       </div>
+
+    </div>
+    <i class="fas fa-chevron-right arrow"></i>
+  </div>
+</section>
+<section class="featured-section">
+        <div class="featured-content">
+    <img class="featured-poster" src="img/piecer.jpg" alt="">
+    <div class="featured-text">
+ <h2 class="featured-title">ONE PIECE ADVENTURE</h2>
+ <p class="featured-desc">Embark on a voyage of a lifetime with One Piece. The epic anime series created by
+ renowned mangaka Eiichiro Oda is a global phenomenon, captivating the hearts of fans across generations
+ throughout its 25-year span. This thrilling high seas adventure is filled with unwavering friendship, epic
+ battles for freedom, and the relentless pursuit of dreams. Join Monkey D. Luffy and his lovable pirate crew
+ as they discover the true meaning of power and justice in this great pirate era.
+ Monkey D. Luffy refuses to let anyone or anything stand in the way of his quest to become King of the
+ Pirates. With his rubber-like stretching powers granted by the supernatural Devil Fruit, the spirited young
+ pirate seeks the legendary treasure known as the One Piece. He’ll chart a course for the treacherous waters
+ of the Grand Line and recruit a motley crew to build his Straw Hat Pirates one bond at a time. This is one
+ captain who’ll never drop anchor until he and his friends all reach their dreams!
+ </p>
+          <button class="btn btn-primary" onclick="watchAnime('one-piece')">
+    <i class="fas fa-play"></i> Watch
+</button>
+ </div>
+</div>
+</section>
+<section class="content-section">
+  <h2 class="section-title">Let's Visit Another World</h2>
+  <div class="movie-grid">
+<i class="fas fa-chevron-left arrow left-arrow"></i>
+<!--Re:zero -->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/re.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Re:Zero – Starting Life in Another World</span>
+        <p class="movie-description">Transported to a fantasy world with no powers and no clue why,
+          Subaru Natsuki discovers one terrifying gift: he can come back to life every time he
+          dies—painfully. But with every reset, the cost to his mind, soul, and heart grows heavier.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Isekai | Fantasy</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('rezero')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--Slime-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/slime.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">That Time I Got Reincarnated as a Slime</span>
+        <p class="movie-description">After a dying wish, Satoru Mikami is reborn in a fantasy world as a weak slime. But he possesses a unique power: to devour anything and acquire its skills. This unassuming blob begins an incredible journey, befriending monsters and building a nation that defies all fate.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Isekai | Fantasy</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('slime')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--sao-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/sao.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Sword Art Online</span>
+        <p class="movie-description">Trapped in a deadly virtual world, Kirito must clear 100 floors to escape. But in this game, death is permanent. He doesn't just play to win—he fights to survive, leveling up through treacherous dungeons and deadly battles to see the real world again.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Action | Isekai</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('sword-art-online')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--overlord-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/over.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Overlord</span>
+        <p class="movie-description">When his favorite game shuts down, player Momonga is trapped in the body of his skeletal overlord avatar. His NPC servants are now alive, viewing him as their supreme ruler. To survive, he must embrace his role and conquer this new world, one terrified subject at a time.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Dark Fantasy | Isekai</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('overlord')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--grimgar-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/grim.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Grimgar Of Fantasy & Ash</span>
+        <p class="movie-description">A group awakens in a fantasy world with no memory and no power. They are not heroes. They must earn every coin and suffer every loss together. In this brutally realistic world, they don't level up—they are worn down by grief and forged in the fight to survive.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Fantasy | Drama</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('grimgar')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--erased-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/erased.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Erased</span>
+        <p class="movie-description">Satoru Fujinuma is sent back 18 years to his childhood. He now has a chance to prevent the tragic kidnappings that haunted his past. To save the future, he must save a lonely classmate, unraveling a killer's identity before time runs out.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Mystery | Drama</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('erased')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--the realist hero-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/real.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">The Realist Hero</span>
+        <p class="movie-description">Summoned as a "hero," Souya Kazuya isn't given a sword—he's given the crown to a bankrupt kingdom. He forgoes slaying monsters to wield economic reform and political strategy, rebuilding a failing nation from the ground up with cold, hard logic.
+</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Isekai | Strategy</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('realist-hero')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+
+  </div>
+  <i class="fas fa-chevron-right arrow"></i>
+</section>
+
+<section class="content-section">
+  <h2 class="section-title">It’s OK to Simp on These!</h2>
+  <div class="movie-grid">
+<i class="fas fa-chevron-left arrow left-arrow"></i>
+<!--your name-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/name.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Your Name</span>
+        <p class="movie-description">Mitsuha and Taki are two strangers connected by a bizarre phenomenon: they randomly swap bodies. Through this chaotic connection, a bond forms. But they are separated by more than distance, and must race against time to prevent an impending disaster.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Romance | Drama</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('your-name')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--horimiya-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/hori.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Horimiya</span>
+        <p class="movie-description">On the surface, Kyouko Hori is a popular, perfect high school girl. Izumi Miyamura is a quiet, glasses-wearing loner. But their after-school selves are a secret: Hori is a homebody, and Miyamura is a gentle punk covered in tattoos and piercings. When they discover each other's hidden lives, an unlikely bond forms, revealing that everyone is more than they appear.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Romance | Slice of Life</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('horimiya')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--fruits basket-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/fruit.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Fruits Basket</span>
+        <p class="movie-description">After a family tragedy, orphan Tohru Honda ends up living in a tent—on the land of the mysterious Sohma family. She soon uncovers their ancient curse: certain members transform into animals of the Chinese zodiac when hugged by the opposite sex. In a house of secrets and sorrow, her kindness becomes the key to breaking their generational spell.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Romance | Drama</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('fruits-basket')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--your lie in april-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/your.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Your Lie in April</span>
+        <p class="movie-description"> Piano prodigy Kousei Arima hasn't played a note since the death of his mother. His world is monochrome and silent, until he meets the spirited violinist Kaori Miyazono. Dragged back into the world of music by her free-spirited playing, he must confront his past to find the strength to perform again, and add color to his world.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Romance | Drama</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('your-lie-in-april')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--love is war-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/kagu.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Kaguya-sama: Love is War</span>
+        <p class="movie-description">Two elite student council geniuses are perfect for each other. Too proud to confess, they see love as a war. They scheme, manipulate, and lay elaborate traps to make the other admit their feelings first, in a hilarious battle of romantic wills.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Romance | Comedy</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('kaguya-sama')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--my dress up-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/dress.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">My Dress-Up Darling</span>
+        <p class="movie-description">Wakana Gojo, a shy doll-maker, meets Marin Kitagawa, a radiant cosplayer. When she discovers his sewing skill, she pulls him into her vibrant world. Together, they pour their passion into crafting perfect costumes, stitching together an unlikely connection.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Romance | Comedy</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('dress-up-darling')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+<!--lost in starlight-->
+<div class="card">
+    <article class="movie-card">
+      <img class="movie-poster" src="img/lost.jpg" alt="">
+      <div class="movie-info">
+        <span class="movie-title">Lost in Starlight</span>
+        <p class="movie-description">Ambitious paparazzo Saya targets the world's hottest boy band. But when she gets too close, she uncovers their deadly secret: they are vampires. Now, she's torn between exposing the truth and her growing attraction to their enigmatic, brooding leader.</p>
+        <div class="movie-meta">
+          <span class="movie-rating">⭐ 9.9/10</span>
+          <span class="movie-genre">Sub|Dub</span>
+          <span class="movie-genre">Romance | Sci-Fi</span>
+        </div>
+          <button class="btn btn-primary" onclick="watchAnime('lost in starlight')">
+    <i class="fas fa-play"></i> Watch
+</button>
+      </div>
+    </article>
+</div>
+  </div>
+  <i class="fas fa-chevron-right arrow"></i>
+</section>
+
+
+ <footer class="site-footer">
+ <div class="footer-cta">
+ <img src="img/sleepy-cat.png" alt="Cute sleeping character" class="footer-img" />
+ <p>Still looking for something to watch?<br />Check out our full library</p>
+ <button class="footer-button">VIEW ALL</button>
+ </div>
+
+ <div class="footer-links">
+ <div class="footer-column">
+ <h4>Navigation</h4>
+ <a href="index.html">Home</a>
+ <a href="movie.html">Movies</a>
+ <a href="series.html">Series</a>
+ <a href="special.html">Specials</a>
+ <a href="#">Games</a>
+ </div>
+
+ <div class="footer-column">
+ <h4>Connect With Us</h4>
+ <a href="#">Youtube</a>
+ <a href="#">Facebook</a>
+ <a href="#">X</a>
+ <a href="#">Instagram</a>
+ <a href="#">TikTok</a>
+ </div>
+
+ <div class="footer-column">
+ <h4><span style="color: orange;">Just</span>Imajin</h4>
+ <a href="#">Start a Free Trial</a>
+ <a href="#">About</a>
+ <a href="#">Help Center</a>
+ <a href="#">Terms of Use</a>
+ <a href="#">Privacy Policy</a>
+ </div>
+
+ <div class="footer-column">
+ <h4>Account</h4>
+ <a href="#">Switch Profile</a>
+ <a href="#">Imajinlists</a>
+ <a href="#">History</a>
+ <a href="#">My Account</a>
+ <a href="#">log in</a>
+ <a href="#">sign in</a>
+ </div>
+ </div>
+
+ <div class="footer-bottom">
+ <p>Imajin Ent | ©<span style="color: orange;">Just</span>Imajin, AAA</p>
+ <p>🌐 ENGLISH (US)</p>
+ </div>
+</footer>
+
+<!-- Add these scripts before closing body tag -->
+<script src="auth.js"></script>
+<script src="filter.js"></script>
+<script src="apps.js"></script>
+</body>
+
+</html>
+
+
+

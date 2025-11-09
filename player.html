@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Anime - JustImajin</title>
+    <link rel="stylesheet" href="player.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="dark">
+    <!-- Header -->
+    <header class="player-header">
+        <div class="header-content">
+            <h1><span style="color: orange;">Just</span>Imajin</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="movie.html">Movies</a>
+                <a href="series.html">Series</a>
+                <a href="special.html">Specials</a>
+            </nav>
+            <div class="header-actions">
+                <div class="toggle" id="themeToggle">
+                    <i class="fas fa-sun toggle-icon"></i>
+                    <i class="fas fa-moon toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Player Section -->
+    <main class="player-container">
+        <div class="player-wrapper">
+            <!-- Video Player -->
+            <div class="video-section">
+                <div class="video-container">
+                    <video id="mainVideo" controls poster="https://via.placeholder.com/800x450/333/fff?text=Loading+Video">
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-controls-overlay">
+                        <div class="video-info">
+                            <h2 id="videoTitle">Loading Title...</h2>
+                            <div class="video-meta">
+                                <span class="episode-info" id="episodeInfo">Episode 1</span>
+                                <span class="video-quality" id="videoQuality">HD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Episode Selector -->
+                <div class="episode-selector">
+                    <h3>Episodes</h3>
+                    <div class="episode-list" id="episodeList">
+                        <!-- Episodes will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anime Info and Related Content -->
+            <div class="content-section">
+                <!-- Anime Details -->
+                <div class="anime-details">
+                    <div class="anime-poster">
+                        <img id="animePoster" src="https://via.placeholder.com/300x400/333/fff?text=Anime+Poster" alt="Anime Poster">
+                    </div>
+                    <div class="anime-info">
+                        <h1 id="animeTitle">Anime Title</h1>
+                        <div class="anime-meta">
+                            <span class="rating" id="animeRating">⭐ 9.0/10</span>
+                            <span class="genre" id="animeGenre">Action, Fantasy</span>
+                            <span class="year" id="animeYear">2023</span>
+                            <span class="status" id="animeStatus">Ongoing</span>
+                        </div>
+                        <p class="anime-description" id="animeDescription">
+                            Loading description...
+                        </p>
+                        <div class="anime-stats">
+                            <div class="stat">
+                                <span class="stat-label">Episodes</span>
+                                <span class="stat-value" id="totalEpisodes">12</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Duration</span>
+                                <span class="stat-value" id="episodeDuration">24m</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Studio</span>
+                                <span class="stat-value" id="animeStudio">Studio Name</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Anime - Horizontal Layout -->
+                <div class="related-section">
+                    <h3>More Like This</h3>
+                    <div class="related-anime-grid" id="relatedAnime">
+                        <!-- Related anime will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading video...</p>
+    </div>
+ <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-cta">
+                <img src="img/sleepy-cat.png" alt="Cute sleeping character" class="footer-img" />
+                <p>Still looking for something to watch?<br />Check out our full library</p>
+                <button class="footer-button">VIEW ALL</button>
+            </div>
+
+             <div class="footer-links">
+ <div class="footer-column">
+ <h4>Navigation</h4>
+ <a href="index.html">Home</a>
+ <a href="movie.html">Movies</a>
+ <a href="series.html">Series</a>
+ <a href="special.html">Specials</a>
+ <a href="#">Games</a>
+ </div>
+
+ <div class="footer-column">
+ <h4>Connect With Us</h4>
+ <a href="#">Youtube</a>
+ <a href="#">Facebook</a>
+ <a href="#">X</a>
+ <a href="#">Instagram</a>
+ <a href="#">TikTok</a>
+ </div>
+
+ <div class="footer-column">
+ <h4><span style="color: orange;">Just</span>Imajin</h4>
+ <a href="#">Start a Free Trial</a>
+ <a href="#">About</a>
+ <a href="#">Help Center</a>
+ <a href="#">Terms of Use</a>
+ <a href="#">Privacy Policy</a>
+ </div>
+
+ <div class="footer-column">
+ <h4>Account</h4>
+ <a href="#">Switch Profile</a>
+ <a href="#">Imajinlists</a>
+ <a href="#">History</a>
+ <a href="#">My Account</a>
+ <a href="#">log in</a>
+ <a href="#">sign in</a>
+ </div>
+ </div>
+
+            <div class="footer-bottom">
+                <p>Imajin Ent | ©<span style="color: orange;">Just</span>Imajin</p>
+                <p>🌐 ENGLISH (US)</p>
+            </div>
+        </div>
+    </footer>
+    <script src="player.js"></script>
+</body>
+</html>
